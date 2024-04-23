@@ -1,0 +1,87 @@
+/* From uiverse.io by @satyamchaudharydev */
+/* removing default style of button */
+
+.form button {
+    border: none;
+    background: none;
+    color: #8b8ba7;
+  }
+  /* styling of whole input container */
+  .form {
+    --timing: 0.3s;
+    --width-of-input: 400px;
+    --height-of-input: 60px;
+    --border-height: 2px;
+    --input-bg: #fff;
+    --border-color: #FF8400;
+    --border-radius: 30px;
+    --after-border-radius: 1px;
+    position: relative;
+    width: var(--width-of-input);
+    height: var(--height-of-input);
+    display: flex;
+    align-items: center;
+    padding-inline: 0.8em;
+    border-radius: var(--border-radius);
+    transition: border-radius 0.5s ease;
+    background: var(--input-bg,#fff);
+    -webkit-box-shadow: 0px 9px 29px 0px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px 9px 29px 0px rgba(0,0,0,0.45);
+    box-shadow: 0px 9px 29px 0px rgba(0,0,0,0.45);
+  }
+
+  /* Media query for smaller screens */
+@media (max-width: 768px) {
+    .form {
+      --width-of-input: 300px; /* Adjust the width for smaller screens */
+    }
+  }
+  
+  /* Media query for even smaller screens */
+  @media (max-width: 480px) {
+    .form {
+      --width-of-input: 200px; /* Further adjust the width for very small screens */
+    }
+  }
+  
+  /* Media query for larger screens */
+  @media (min-width: 1024px) {
+    .form {
+      --width-of-input: 500px; /* Adjust the width for larger screens */
+    }
+  }
+  /* styling of Input */
+  .input {
+    font-size: 0.9rem;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    padding-inline: 0.5em;
+    padding-block: 0.7em;
+    border: none;
+  }
+  input:focus {
+    outline: none;
+  }
+  /* here is code of animated border */
+  .form:focus-within:before {
+    transform: scale(1);
+  }
+  /* styling of close button */
+  /* == you can click the close button to remove text == */
+  .reset {
+    border: none;
+    background: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+  /* close button shown when typing */
+  input:not(:placeholder-shown) ~ .reset {
+    opacity: 1;
+    visibility: visible;
+  }
+  /* sizing svg icons */
+  .form svg {
+    width: 17px;
+    margin-top: 3px;
+  }
